@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Subscribe – The Advent Project</title>
+        <link rel="stylesheet" type="text/css" href="css/duplicate-sans.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+         <!-- Favicons -->
+        <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="images/favicon/favicon-192x192.png" sizes="192x192">
+        <link rel="apple-touch-icon-precomposed" href="images/favicon/favicon-180x180.png">
+        <meta name="msapplication-TileImage" content="images/favicon/favicon-270x270.png">
+    </head>
+    <body>
+        <header>
+            <a id="logo" href="https://adventproject.org"><img src="images/logo.svg" alt="The Advent Project logo"></a>
+        </header>
+        <div id="wrapper">
+            <main>
+                <div id="intro">
+                    <h1>Stay in touch.</h1>
+                    <p>Thanks for your interest in The Advent Project! Sign up for our email list to be notified when something cool is happening.</p>
+                </div>
+                <form id="subscribe">
+                    <label class="field regular" for="full-name">
+                        <span class="label">Your email:</em></span>
+                        <input id="email" name="email" type="email" value="" required>
+                    </label>
+                    <label class="field regular" for="full-name">
+                        <span class="label">Your name:</span>
+                        <input id="full-name" name="full-name" type="text" value="">
+                    </label>
+                    <label class="field inline" for="preferred-name">
+                        <span class="label prompt">In emails, we'll refer to you as:</span>
+                        <input id="preferred-name" name="preferred-name" type="text" value="">
+                        <span class="input-sizer" data-field="preferred-name" aria-hidden="true"></span>
+                        <span class="footnote">(choose a nickname or other name, if you'd like)</span>
+                        <div class="curtain"></div>
+                    </label>
+                    <!--
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span>Send me a daily reminder when new art is unlocked.</span>
+                    </label>
+                    -->
+                    <input type="submit" value="Subscribe">
+                </form>
+                <p id="status"></p>
+                <script src="index.min.js"></script>
+            </main>
+        </div>
+    </body>
+</html>
