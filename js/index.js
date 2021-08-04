@@ -1,7 +1,9 @@
-/* Set preferred/short name */
+/* 
+    Set preferred/short name
+*/
 
 function setPreferredName() {
-    const fullName = document.querySelector('#full-name')
+    const fullName = document.querySelector('#name')
     const preferredNameContainer = document.querySelector('label[for="preferred-name"]')
     const inputSizer = document.querySelector('span.input-sizer[data-field="preferred-name"]')
     const preferredName = document.querySelector('#preferred-name')
@@ -35,9 +37,46 @@ function sizePreferredName() {
 
 setPreferredName()
 sizePreferredName()
-document.querySelector('#full-name').addEventListener('keyup', setPreferredName)
+document.querySelector('#name').addEventListener('keyup', setPreferredName)
 document.querySelector('#preferred-name').addEventListener('keyup', (e) => {
     document.querySelector('span.input-sizer[data-field="preferred-name"]').innerText = e.target.value    
     sizePreferredName()
 })
 
+/* Handle form submission */
+
+function submitForm(form) {
+    // Get fields
+    const name = form.querySelector('#name').value
+    const email = form.querySelector('#email').value
+    const preferredName = form.querySelector('#preferred-name').value
+    const data = {
+        'name': name,
+        'email': email,
+        'PreferredName': preferredName
+    }
+    // take the data and post to the netlify function
+    fetch('.netlify/functions/subscribe', {
+        body: JSON.stringify(data),
+        method: 'POST'
+        }).then(response => {
+        return response.json()
+        }).then( data => {
+        console.log(data)
+        return
+        // old stuff
+        statusText.innerText = data.message
+        if(data.code == 200) {
+            statusText.setAttribute('class', 'success')
+        }
+        else {
+            statusText.setAttribute('class', 'error')
+        }
+        })
+    console.log(name, email, preferredName)
+}
+
+document.querySelector('#subscribe').addEventListener('submit', (e) => {
+    e.preventDefault()
+    submitForm(e.target)
+})
