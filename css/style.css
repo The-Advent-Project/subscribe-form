@@ -21,8 +21,8 @@ body {
     font-family: "Duplicate Sans", system-ui, sans-serif;
     background-color: var(--bg-normal);
     background-image: url('/images/subscribe-background.png');
-    background-size: 225px;
-    background-position: right 15px bottom 50%;
+    background-size: 180px;
+    background-position: right 15px top 15px;
     background-repeat: no-repeat;
     color: var(--text-color);
 }
@@ -50,14 +50,24 @@ h1 {
 }
 
 p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.35rem;
 }
 
 @media (min-width: 801px) {
 
+    body {
+        background-position: right 15px bottom 50%;
+        background-size: 225px;
+    }
+
     h1 {
         font-size: 3.1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.35rem;
     }
 
 }
@@ -109,13 +119,17 @@ p {
 
 /* FORM: Generic field styles */
 
+form#subscribe {
+    margin-bottom: 2rem;
+}
+
 .field {
     display: block;
     margin-bottom: 1.5rem;
 }
 
 .field .label {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-bottom: 0.3rem;
     display: block;
     font-weight: 500;
@@ -176,7 +190,8 @@ input[type="submit"] {
     border-top: 2px solid #0dabc4;
     border-bottom: 3px solid #0098af;
     text-shadow: #008599 1px 2px 0px;
-    transition: background-color 0.2s ease, transform 0.3s ease;
+    box-shadow: rgba(255, 255, 255, 0) 0 0 2px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
     transform: scale(1);
 }
 
@@ -187,7 +202,15 @@ input[type="submit"]:hover {
 
 button.normal:active,
 input[type="submit"]:active {
+    background-color: #0095ac;
     transform: scale(1.02);
+}
+
+@media (min-width: 801px) {
+    button.normal,
+    input[type="submit"] {
+        min-width: 180px;
+    }
 }
 
 /* FORM: Preferred name */
@@ -271,4 +294,27 @@ input[type="submit"]:active {
         font-size: 0.85rem;
     }
 
+}
+
+/* Status text */
+
+#status {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background: white;
+    padding: 0.4rem 0.6rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 0;
+    border-radius: 0.2rem;
+    color: #393939;
+    max-width: 450px;
+    font-weight: 500;
+}
+
+#status.info,
+#status.subscribing,
+#status.success,
+#status.error {
+    transform: scale(1);
+    opacity: 1;
 }

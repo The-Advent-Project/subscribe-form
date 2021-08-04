@@ -275,10 +275,18 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/index.min.js.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/index.min.js.map",
+      "oF" : 0
+    },
     "\/js\/index.js" : {
       "bF" : 6,
       "ft" : 64,
-      "ma" : 0,
+      "ma" : 1,
       "mi" : 1,
       "oA" : 0,
       "oAP" : "\/index.min.js",
@@ -352,7 +360,7 @@
   "projectSettings" : {
     "abortBuildOnError" : 1,
     "allowInjectionReloads" : 1,
-    "alwaysUseExternalServer" : 0,
+    "alwaysUseExternalServer" : 1,
     "animateCSSInjections" : 1,
     "autoBuildNewItems" : 1,
     "autoprefixerEnableIEGrid" : 0,
@@ -1765,7 +1773,7 @@
       }
     },
     "esLintSourceType" : 0,
-    "externalServerAddress" : "http:\/\/localhost:2222\/subscribe-form\/",
+    "externalServerAddress" : "http:\/\/localhost:8888",
     "gitIgnoreBuildFolder" : 1,
     "hideConfigFile" : 0,
     "jsCheckerReservedNamesString" : "",

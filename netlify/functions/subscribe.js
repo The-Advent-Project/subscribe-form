@@ -1,8 +1,6 @@
 const axios = require('axios')
 const apiKey = process.env.SENDY_API_KEY
 
-console.log(process.env)
-
 exports.handler = async (event, context) => {
 
   // Get fields from front-end
@@ -12,6 +10,7 @@ exports.handler = async (event, context) => {
   const params = new URLSearchParams()
   params.append('name', data.name)
   params.append('email', data.email)
+  params.append('PreferredName', data.preferredName)
   params.append('list', 'yxWKzjm4jwh5Q2WXB0tOHw')
   params.append('boolean', 'true')
   params.append('api_key', apiKey)
@@ -21,7 +20,8 @@ exports.handler = async (event, context) => {
   try {
     const response = await axios.post('https://sendy.adventproject.org/subscribe', params)
     let statusCode = null, success = null
-    if(response.data !== "true") { // Connected successfully but Sendy threw an error
+    console.log('Sendy response:', response.data)
+    if(response.data !== "true" && response.data !== 1 && response.data !== true) { // Connected successfully but Sendy threw an error
       success = false
       statusCode = 400
     }
