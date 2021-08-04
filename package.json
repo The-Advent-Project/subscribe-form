@@ -1,0 +1,13 @@
+{
+  "name": "advent-subscribe-form",
+  "version": "1.0.0",
+  "description": "The Advent Project's email subscriber form.",
+  "scripts": {},
+  "author": "",
+  "license": "UNLICENSED",
+  "repository": {},
+  "private": true,
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
