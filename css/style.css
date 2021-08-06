@@ -5,6 +5,8 @@
     --bg-dark: #06313d;
     --heading-color: #226C85;
     --text-color: #222;
+    --blue: #00a2bb;
+    --dark-blue: #008599;
     --light-text-color: rgb(107, 44, 44);
     --row-padding: 1.3rem;
 }
@@ -52,6 +54,26 @@ h1 {
 p {
     font-size: 1rem;
     line-height: 1.35rem;
+}
+
+a {
+    color: var(--heading-color);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    border-bottom-color: var(--heading-color);
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: rgba(255, 255, 255, 0) 0 0 5px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: rgba(255, 255, 255, 0.5) 0 0 5px, rgba(255, 255, 255, 0.5) 0 0 5px;
+    border-radius: 2px;
+    border-bottom-color: rgba(255, 255, 255, 0);
+    color: var(--dark-blue);
 }
 
 @media (min-width: 801px) {

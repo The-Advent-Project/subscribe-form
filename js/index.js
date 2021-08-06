@@ -72,17 +72,17 @@ function submitForm(form) {
         console.log(data)
         // Map terse Sendy API responses to friendly messages
         let statusText = data.message, statusType = ''
-        const sendyMessages = [{
+        if( data.success == true ) {
+            statusText = `🎉 Subscribed! Talk to you soon.`
+            statusType = 'success'
+        } else {
+            const errorMessages = [{
                 sendyText: 'Already subscribed',
                 type: 'info',
                 text: `You're already subscribed! Thanks for reading.`
             }
         ]
-        if( data.success == true ) {
-            statusText = `🎉 Subscribed! Talk to you soon.`
-            statusType = 'success'
-        } else {
-            sendyMessages.forEach(obj => {
+            errorMessages.forEach(obj => {
                 if( data.message.includes(obj.sendyText) ) {
                     statusText = obj.text
                     statusType = obj.type
