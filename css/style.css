@@ -23,7 +23,7 @@ body {
     font-family: "Duplicate Sans", system-ui, sans-serif;
     background-color: var(--bg-normal);
     background-image: url('/images/subscribe-background.png');
-    background-size: 180px;
+    background-size: 160px;
     background-position: right 15px top 15px;
     background-repeat: no-repeat;
     color: var(--text-color);
@@ -95,6 +95,15 @@ a:hover {
 
 }
 
+@media (min-width: 1201px) {
+
+    body {
+        background-position: right 15% bottom 50%;
+        background-size: 225px;
+    }
+
+}
+
 /* Header */
 
 #logo {
@@ -156,7 +165,7 @@ form#subscribe {
     margin-bottom: 0.3rem;
     display: block;
     font-weight: 500;
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
 }
 
 .field .label em,
