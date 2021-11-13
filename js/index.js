@@ -33,6 +33,7 @@ function sizePreferredName() {
     preferredName.style.width = `${inputSizer.offsetWidth + 15}px`
 }
 
+/*
 setPreferredName()
 sizePreferredName()
 document.querySelector('#name').addEventListener('keyup', setPreferredName)
@@ -40,6 +41,37 @@ document.querySelector('#preferred-name').addEventListener('keyup', (e) => {
     document.querySelector('span.input-sizer[data-field="preferred-name"]').innerText = e.target.value
     sizePreferredName()
 })
+*/
+
+let existingSubscriber = false
+
+function handleURLParams() {
+    const params = new URLSearchParams(window.location.search)
+    const name = params.get('name')
+    const email = params.get('email')
+    const calendarNotifications = params.get('calendarNotifications')
+    if(name) {
+        document.querySelector('#name').value = name
+    }
+    if(email) {
+        document.querySelector('label[for="email"]').innerHTML += '<p class="email-update">Need to update your email address? Contact us at <a href="mailto:info@adventproject.org">info@adventproject.org</a>.</p>'
+        document.querySelector('#email').value = email
+        document.querySelector('#email').setAttribute("disabled", '')
+    }
+    if(calendarNotifications) {
+        document.querySelector('#calendar-notifications').value = calendarNotifications
+    }
+    if(name || email) {
+        existingSubscriber = true
+        document.querySelector('input[type="submit"]').value = "Update"
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    handleURLParams()
+})
+
+
 
 
 /* 
@@ -48,23 +80,26 @@ document.querySelector('#preferred-name').addEventListener('keyup', (e) => {
 
 function submitForm(form) {
 
-    // Get fields
-    const name = form.querySelector('#name').value
-    const email = form.querySelector('#email').value
-    const preferredName = form.querySelector('#preferred-name').value
+    let subscribeObj = {}
 
+    subscribeObj.name = form.querySelector('#name').value
+    subscribeObj.email = form.querySelector('#email').value
+
+    if( form.querySelector('#preferred-name') ) {
+        subscribeObj.preferredName = form.querySelector('#preferred-name').value
+    }
+    if( form.querySelector('#calendar-notifications') ) {
+        subscribeObj.calendarNotifications = form.querySelector('#calendar-notifications').value
+    }
+    
     // Get status text element
     const statusEl = document.querySelector('#status')
     statusEl.setAttribute('class', 'subscribing')
     statusEl.innerText = 'Subscribing...'
-
+    
     // take the data and post to the netlify function
     fetch('.netlify/functions/subscribe', {
-        body: JSON.stringify({
-            'name': name,
-            'email': email,
-            'preferredName': preferredName
-        }),
+        body: JSON.stringify(subscribeObj),
         method: 'POST'
     }).then(response => {
         return response.json()
@@ -76,12 +111,15 @@ function submitForm(form) {
             statusText = `🎉 Subscribed! Talk to you soon.`
             statusType = 'success'
         } else {
-            const errorMessages = [{
+            let alreadySubscribedMessage = {
                 sendyText: 'Already subscribed',
                 type: 'info',
                 text: `You're already subscribed! Thanks for reading.`
             }
-        ]
+            if( subscribeObj.calendarNotifications !== "" || existingSubscriber == true ) {
+                alreadySubscribedMessage.text = `Thanks! Your preferences have been updated.`
+            }
+            const errorMessages = [alreadySubscribedMessage]
             errorMessages.forEach(obj => {
                 if( data.message.includes(obj.sendyText) ) {
                     statusText = obj.text
@@ -92,6 +130,10 @@ function submitForm(form) {
         statusEl.innerText = statusText
         statusEl.setAttribute('class', statusType)        
     })
+    .catch( (error) => {
+        statusEl.innerText = `There was an issue connecting to our system. Sorry! Please email us at info@adventproject.org, and we can update your information.`
+        statusEl.setAttribute('class', 'error')
+    } )
 }
 
 document.querySelector('#subscribe').addEventListener('submit', (e) => {

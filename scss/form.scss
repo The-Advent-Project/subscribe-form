@@ -1,0 +1,241 @@
+@mixin input-base {
+   display: block;
+   width: 100%;
+   max-width: 450px;
+   font-size: 1.1rem;
+   padding: 0.3rem 0.4rem;
+   border-radius: 5px;
+   border-color: var(--bg-dark);
+   border-width: 2px;
+   border-style: solid;
+}
+
+/* FORM: Generic field styles */
+
+form#subscribe {
+   margin-bottom: 1.67rem;
+}
+
+.field {
+   display: block;
+   margin-bottom: 1.5rem;
+}
+
+.field .label {
+   font-size: 1rem;
+   line-height: 1.4;
+   margin-bottom: 0.3rem;
+   display: block;
+   font-weight: 500;
+   @media (min-width: 801px) {
+      margin-bottom: 0.5rem;
+   }
+}
+
+.field .label em,
+.field .footnote {
+   display: inline-block;
+   margin-left: 0.1rem;
+   font-size: 0.7rem;
+   font-weight: 400;
+   font-style: normal;
+   color: var(--light-text-color);
+}
+
+input[type="text"],
+input[type="email"] {
+   @include input-base;
+   margin-bottom: 0.2rem;
+}
+
+.field.checkbox {
+   display: flex;
+}
+
+.field.checkbox input {
+   margin-right: 0.4rem;
+}
+
+@media (min-width: 801px) {
+   
+   .field .label {
+       font-size: 0.85rem;
+   }
+
+}
+
+p.email-update {
+   font-weight: 400;
+   font-style: italic;
+   margin: 0.5rem 0;
+   font-size: 18px;
+   line-height: 1.4;
+}
+
+/* FORM: Submit buttons */
+
+button.normal,
+input[type="submit"] {
+   border-radius: 0.35rem;
+   font-size: 1.2rem;
+   font-weight: 700;
+   padding: 0.25rem 1.2rem;
+   background-color: #00a2bb;
+   color: white;
+   border: none;
+   border-top: 2px solid #0dabc4;
+   border-bottom: 3px solid #0098af;
+   text-shadow: #008599 1px 2px 0px;
+   box-shadow: rgba(255, 255, 255, 0) 0 0 2px;
+   transition: background-color 0.2s ease, transform 0.2s ease;
+   transform: scale(1);
+}
+
+button.normal:hover,
+input[type="submit"]:hover {
+   background-color: #0dabc4;
+}
+
+button.normal:active,
+input[type="submit"]:active {
+   background-color: #0095ac;
+   transform: scale(1.02);
+}
+
+@media (min-width: 801px) {
+   button.normal,
+   input[type="submit"] {
+       min-width: 180px;
+   }
+}
+
+/* FORM: Preferred name */
+
+.field[for="preferred-name"] {
+   position: relative;
+   width: 100%;
+   display: inline-flex;
+   align-items: flex-end;
+   flex-wrap: wrap;
+}
+
+.field[for="preferred-name"] .curtain {
+   position: absolute;
+   top: 2px;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: var(--bg-normal);
+   transform: scaleY(1);
+   transform-origin: bottom center;
+   transition-property: transform;
+   transition-duration: 0.8s;
+   transition-timing-function: cubic-bezier(0, 0, 0, 1);
+}
+
+.field[for="preferred-name"][data-active="true"] .curtain {
+   transform: scaleY(0);
+}
+
+.field[for="preferred-name"] .label,
+.field[for="preferred-name"] input,
+.field[for="preferred-name"] .input-sizer {
+   display: block;
+   font-weight: 400;
+   font-size: 0.9rem;
+   line-height: 1.5rem;
+}
+
+.field[for="preferred-name"] .input-sizer {
+   visibility: hidden;
+   position: absolute;
+   left: -9999px;
+}
+
+.field[for="preferred-name"] .prompt {
+   margin-right: 0.3rem;
+}
+
+.field[for="preferred-name"] input {
+   border-radius: 0;
+   border-top-width: 0;
+   border-left-width: 0;
+   border-right-width: 0;
+   background-color: transparent;
+   color: var(--text-color);
+   border-color: var(--light-text-color);
+   border-bottom-width: 1px;
+   box-sizing: content-box;
+   padding: 0;
+   padding-left: 1px;
+   padding-right: 3px;
+   margin-bottom: 6px;
+   transition: width 0.3s ease;
+}
+
+.field[for="preferred-name"] .footnote {
+   flex-basis: 99%;
+   flex-shrink: 0;
+}
+
+@media (min-width: 801px) {
+   
+   .field[for="preferred-name"] .footnote {
+       font-size: 0.7rem;
+   }
+
+   .field[for="preferred-name"] .label,
+   .field[for="preferred-name"] input,
+   .field[for="preferred-name"] .input-sizer {
+       font-size: 0.85rem;
+   }
+
+}
+
+.select-menu {
+   position: relative;
+   max-width: 450px;
+   select {
+      @include input-base;
+      max-width: none;
+      appearance: none;
+      -webkit-appearance: none;
+   }
+   &::after {
+      font-family: "Advent Symbols";
+      content: '\F016';
+      right: 15px;
+      top: 2px;
+      font-size: 23px;
+      position: absolute;
+      pointer-events: none;
+      @media (min-width: 801px) {
+         right: 14px;
+         top: 4px;
+         font-size: 26px;   
+      }
+   }
+}
+
+/* Status text */
+
+#status {
+   transform: scale(0.9);
+   opacity: 0;
+   transition: opacity 0.3s ease, transform 0.3s ease;
+   background: white;
+   padding: 0.4rem 0.6rem;
+   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 0;
+   border-radius: 0.2rem;
+   color: #393939;
+   max-width: 450px;
+   font-weight: 500;
+}
+
+#status.info,
+#status.subscribing,
+#status.success,
+#status.error {
+   transform: scale(1);
+   opacity: 1;
+}

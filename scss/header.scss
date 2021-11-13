@@ -1,0 +1,44 @@
+/* Header */
+
+#logo {
+   position: relative;
+   top: var(--row-padding);
+   left: var(--row-padding);
+   background-color: #2e7080;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 68px;
+   height: 68px;
+   border-radius: 500px;
+   text-decoration: none;
+   margin-bottom: 2.3rem;
+   transition: background-color 0.3s ease;
+}
+
+#logo:hover {
+   background-color: #173841;
+}
+
+#logo img {
+   width: 50px;
+   height: auto;
+}
+
+@media (min-width: 801px) {
+   #logo {
+       width: 95px;
+       height: 95px;
+       margin-bottom: 1rem;
+   }
+   #logo img {
+       width: 70px;
+       height: auto;
+   }
+}
+
+/* Intro text */
+
+#intro {
+   margin-bottom: 1.2rem;
+}

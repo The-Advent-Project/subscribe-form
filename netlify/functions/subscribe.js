@@ -10,7 +10,12 @@ exports.handler = async (event, context) => {
   const params = new URLSearchParams()
   params.append('name', data.name)
   params.append('email', data.email)
-  params.append('PreferredName', data.preferredName)
+  if(data.preferredName) {
+    params.append('PreferredName', data.preferredName)
+  }
+  if(data.calendarNotifications !== "") {
+    params.append('CalendarNotifications', data.calendarNotifications)
+  }
   params.append('list', 'yxWKzjm4jwh5Q2WXB0tOHw')
   params.append('boolean', 'true')
   params.append('api_key', apiKey)
