@@ -412,6 +412,18 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/style.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/style-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
     "\/unsubscribe.html" : {
       "cB" : 0,
       "ft" : 8192,
