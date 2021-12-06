@@ -14,6 +14,7 @@ exports.handler = async (event, context) => {
     params.append('PreferredName', data.preferredName)
   }
   if(data.calendarNotifications !== "") {
+    params.append('Keyholder2021', 'yes')
     params.append('CalendarNotifications', data.calendarNotifications)
   }
   params.append('list', 'yxWKzjm4jwh5Q2WXB0tOHw')
