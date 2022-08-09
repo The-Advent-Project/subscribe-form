@@ -4,7 +4,7 @@
    --bg-normal: #FAB2B7;
    --bg-dark: #06313d;
    --heading-color: #226C85;
-   --text-color: #222;
+   --text-color: #412d30;
    --blue: #00a2bb;
    --dark-blue: #008599;
    --light-text-color: rgb(107, 44, 44);
@@ -21,13 +21,14 @@ html {
 }
 
 body {
-   font-family: "Duplicate Sans", system-ui, sans-serif;
+   font-family: "Mallory Compact", "Duplicate Sans", system-ui, sans-serif;
    background-color: var(--bg-normal);
    background-image: url('/images/subscribe-background.png');
    background-size: 160px;
    background-position: right 15px top 15px;
    background-repeat: no-repeat;
    color: var(--text-color);
+   webkit-font-smoothing: antialiased;
 }
 
 #wrapper {
@@ -55,6 +56,7 @@ h1 {
    line-height: 1.1;
    letter-spacing: -0.04rem;
    margin-bottom: 1rem;
+   font-weight: 700;
 }
 
 p {
