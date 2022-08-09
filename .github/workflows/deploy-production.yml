@@ -14,6 +14,7 @@ jobs:
           server: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           port: 22
-          ssh_private_key: ${{ secrets.REMOTE_HOST }}
+          ssh_private_key: ${{ secrets.SERVER_SSH_KEY }}
           local_path: "./*"
+          austinTest: "yes"
           remote_path: ${{ secrets.REMOTE_TARGET }}
