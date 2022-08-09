@@ -8,13 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Deploy to Server
-      uses: easingthemes/ssh-deploy@main
+    - name: Deploy to production
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       env:
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-rltgoDzvO --delete"
-          SOURCE: "./"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
-          EXCLUDE: "/dist/, /node_modules/"
+          server: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          port: 22
+          ssh_private_key: ${{ secrets.REMOTE_HOST }}
+          local_path: "./*"
+          remote_path: ${{ secrets.REMOTE_TARGET }}
