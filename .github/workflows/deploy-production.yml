@@ -1,20 +1,16 @@
-name: Node CI
-
 on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: Deploy to production
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-      env:
+      with:
           server: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
-          port: 22
           ssh_private_key: ${{ secrets.SERVER_SSH_KEY }}
           local_path: "./*"
-          austinTest: "yes"
           remote_path: "public_html/subscribe-form"
