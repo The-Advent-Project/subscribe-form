@@ -11,6 +11,6 @@ jobs:
       with:
           server: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
-          ssh_private_key: ${{ secrets.SERVER_SSH_KEY }}
+          password: ${{ secrets.REMOTE_PASSWORD }}
           local_path: "./*"
           remote_path: "public_html/subscribe-form"
