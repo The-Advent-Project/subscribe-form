@@ -17,4 +17,4 @@ jobs:
           ssh_private_key: ${{ secrets.SERVER_SSH_KEY }}
           local_path: "./*"
           austinTest: "yes"
-          remote_path: ${{ secrets.REMOTE_TARGET }}
+          remote_path: "public_html/subscribe-form"
