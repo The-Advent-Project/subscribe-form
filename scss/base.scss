@@ -1,112 +1,112 @@
 /* Scaffolding */
 
 :root {
-   --bg-normal: #FAB2B7;
-   --bg-dark: #06313d;
-   --heading-color: #226C85;
-   --text-color: #412d30;
-   --blue: #00a2bb;
-   --dark-blue: #008599;
-   --light-text-color: rgb(107, 44, 44);
-   --row-padding: 1.3rem;
-   --row-padding-medium: 3rem;
+  --bg-normal: #fab2b7;
+  --bg-dark: #06313d;
+  --heading-color: #226c85;
+  --text-color: #412d30;
+  --blue: #00a2bb;
+  --dark-blue: #008599;
+  --light-text-color: rgb(107, 44, 44);
+  --row-padding: 1.3rem;
+  --row-padding-medium: 3rem;
 }
 
-*, *:before, *:after {
-   box-sizing: border-box;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 html {
-   font-size: 17px;
+  font-size: 17px;
 }
 
 body {
-   font-family: "Mallory Compact", "Duplicate Sans", system-ui, sans-serif;
-   background-color: var(--bg-normal);
-   background-image: url('/images/subscribe-background.png');
-   background-size: 160px;
-   background-position: right 15px top 15px;
-   background-repeat: no-repeat;
-   color: var(--text-color);
-   webkit-font-smoothing: antialiased;
+  font-family: "Mallory Compact", system-ui, sans-serif;
+  background-color: var(--bg-normal);
+  background-image: url("/images/subscribe-background.png");
+  background-size: 160px;
+  background-position: right 15px top 15px;
+  background-repeat: no-repeat;
+  color: var(--text-color);
+  webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #wrapper {
-   max-width: 640px;
-   padding-left: var(--row-padding);
-   padding-right: var(--row-padding);
-   padding-bottom: 3rem;
-   margin-left: auto;
-   margin-right: auto;
-   @media (min-width: 801px) {
-      padding-left: var(--row-padding-medium);
-      padding-right: var(--row-padding-medium);   
-   }
+  max-width: 640px;
+  padding-left: var(--row-padding);
+  padding-right: var(--row-padding);
+  padding-bottom: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 801px) {
+    padding-left: var(--row-padding-medium);
+    padding-right: var(--row-padding-medium);
+  }
 }
 
 @media (min-width: 801px) {
-   html {
-       font-size: 22px;
-   }
+  html {
+    font-size: 22px;
+  }
 }
 
 h1 {
-   color: var(--heading-color);
-   font-size: 2.67rem;
-   line-height: 1.1;
-   letter-spacing: -0.04rem;
-   margin-bottom: 1rem;
-   font-weight: 700;
+  color: var(--heading-color);
+  font-size: 2.67rem;
+  line-height: 1.1;
+  letter-spacing: -0.04rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 p {
-   font-size: 1rem;
-   line-height: 1.45rem;
+  font-size: 1rem;
+  line-height: 1.45rem;
 }
 
 a {
-   color: var(--heading-color);
-   font-weight: 700;
-   text-decoration: none;
-   border-bottom-width: 1px;
-   border-bottom-style: dotted;
-   border-bottom-color: var(--heading-color);
-   background-color: rgba(255, 255, 255, 0);
-   box-shadow: rgba(255, 255, 255, 0) 0 0 5px;
-   transition: background-color 0.2s ease, box-shadow 0.2s ease, border-bottom-color 0.2s ease;
+  color: var(--heading-color);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+  border-bottom-color: var(--heading-color);
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: rgba(255, 255, 255, 0) 0 0 5px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    border-bottom-color 0.2s ease;
 }
 
 a:hover {
-   background-color: rgba(255, 255, 255, 0.5);
-   box-shadow: rgba(255, 255, 255, 0.5) 0 0 5px, rgba(255, 255, 255, 0.5) 0 0 5px;
-   border-radius: 2px;
-   border-bottom-color: rgba(255, 255, 255, 0);
-   color: var(--dark-blue);
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: rgba(255, 255, 255, 0.5) 0 0 5px, rgba(255, 255, 255, 0.5) 0 0 5px;
+  border-radius: 2px;
+  border-bottom-color: rgba(255, 255, 255, 0);
+  color: var(--dark-blue);
 }
 
 @media (min-width: 801px) {
+  body {
+    background-position: right 15px bottom 50%;
+    background-size: 225px;
+  }
 
-   body {
-       background-position: right 15px bottom 50%;
-       background-size: 225px;
-   }
+  h1 {
+    font-size: 3.1rem;
+  }
 
-   h1 {
-       font-size: 3.1rem;
-   }
-
-   p {
-       font-size: 0.9rem;
-       line-height: 1.35rem;
-   }
-
+  p {
+    font-size: 0.9rem;
+    line-height: 1.35rem;
+  }
 }
 
 @media (min-width: 1201px) {
-
-   body {
-       background-position: right 15% bottom 50%;
-       background-size: 225px;
-   }
-
+  body {
+    background-position: right 15% bottom 50%;
+    background-size: 225px;
+  }
 }

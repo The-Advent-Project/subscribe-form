@@ -1,62 +1,90 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Subscribe – The Advent Project</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-         <!-- Favicons -->
-        <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="images/favicon/favicon-192x192.png" sizes="192x192">
-        <link rel="apple-touch-icon-precomposed" href="images/favicon/favicon-180x180.png">
-        <meta name="msapplication-TileImage" content="images/favicon/favicon-270x270.png">
-    </head>
-    <body>
-        <header>
-            <a id="logo" href="https://adventproject.org"><img src="images/logo.svg" alt="The Advent Project logo"></a>
-        </header>
-        <div id="wrapper">
-            <main>
-                <div id="intro">
-                    <h1>Stay in touch.</h1>
-                    <p>Thanks for your interest in The Advent Project! Sign up for our email list to be notified when something cool is happening.</p>
-                </div>
-                <form id="subscribe">
-                    <label class="field regular" for="name">
-                        <span class="label">Your name:</span>
-                        <input id="name" name="name" type="text" value="">
-                    </label>
-                    <label class="field regular" for="email">
-                        <span class="label">Your email:</em></span>
-                        <input id="email" name="email" type="email" value="" required>
-                    </label>
-                    <!--
-                    <label class="field inline" for="preferred-name">
-                        <span class="label prompt">In emails, we'll refer to you as:</span>
-                        <input id="preferred-name" name="preferred-name" type="text" value="">
-                        <span class="input-sizer" data-field="preferred-name" aria-hidden="true"></span>
-                        <span class="footnote">(Choose a nickname or other name, if you'd like.)</span>
-                        <div class="curtain"></div>
-                    </label>
-                    -->
-                    <div id="keyholder-fields">
-                        <label class="field">
-                            <span class="label">If you have a calendar key, would you like a reminder when new art appears?</span>
-                            <div class="select-menu">
-                                <select name="calendar-notifications" id="calendar-notifications">
-                                    <option value="" selected>Choose...</option>
-                                    <option value="daily">Yes, every day until the 24th.</option>
-                                    <option value="weekly">Yes, just once a week.</option>
-                                    <option value="no">No, don't send me any reminders.</option>
-                                </select>
-                                </div>
-                        </label>
-                    </div>
-                    <input type="submit" value="Subscribe">
-                </form>
-                <p id="status"></p>
-                <script src="index.min.js"></script>
-            </main>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Subscribe – The Advent Project</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/mallory-compact/mallory-compact.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/favicon/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/favicon/favicon-192x192.png"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="images/favicon/favicon-180x180.png"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="images/favicon/favicon-270x270.png"
+    />
+  </head>
+  <body>
+    <header>
+      <a id="logo" href="https://adventproject.org"
+        ><img src="images/logo.svg" alt="The Advent Project logo"
+      /></a>
+    </header>
+    <div id="wrapper">
+      <main>
+        <div id="intro">
+          <h1>Stay in touch.</h1>
+          <p>
+            Thanks for your interest in The Advent Project! Sign up for our
+            email list to be notified when something cool is happening.
+          </p>
         </div>
-    </body>
+        <form id="subscribe">
+          <label class="field regular" for="name">
+            <span class="label">Your name:</span>
+            <input id="name" name="name" type="text" value="" />
+          </label>
+          <label class="field regular" for="email">
+            <span class="label">Your email:</span>
+            <input id="email" name="email" type="email" value="" required />
+          </label>
+          <!--
+          <div id="keyholder-fields">
+            <label class="field">
+              <span class="label"
+                >If you have a key for this year, would you like a reminder when new
+                art appears?</span
+              >
+              <div class="select-menu">
+                <select
+                  name="notifications"
+                  id="notifications"
+                >
+                  <option value="updates" selected>Choose...</option>
+                  <option value="art,updates">
+                    Yes, remind me once a week.
+                  </option>
+                  <option value="updates">
+                    No, don't send me artwork reminders.
+                  </option>
+                </select>
+              </div>
+            </label>
+          </div>
+	  -->
+          <input type="submit" value="Subscribe" />
+        </form>
+        <p id="status"></p>
+        <script src="js/_index.js"></script>
+      </main>
+    </div>
+  </body>
 </html>

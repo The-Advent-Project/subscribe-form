@@ -2,7 +2,9 @@
   "name": "advent-subscribe-form",
   "version": "1.0.0",
   "description": "The Advent Project's email subscriber form.",
-  "scripts": {},
+  "scripts": {
+    "sass": "sass scss/_style.scss style.css"
+  },
   "author": "",
   "license": "UNLICENSED",
   "repository": {},

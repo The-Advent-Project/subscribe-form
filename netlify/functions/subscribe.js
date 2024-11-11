@@ -12,9 +12,9 @@ exports.handler = async (event, context) => {
   if (data.preferredName) {
     params.append("PreferredName", data.preferredName);
   }
-  if (data.calendarNotifications !== "") {
-    params.append("Keyholder2022", "yes");
-    params.append("CalendarNotifications", data.calendarNotifications);
+  if (data.notifications !== "") {
+    params.append("Keyholder2024", "yes");
+    params.append("Notifications", data.notifications);
   }
   params.append("list", "yxWKzjm4jwh5Q2WXB0tOHw");
   params.append("boolean", "true");
