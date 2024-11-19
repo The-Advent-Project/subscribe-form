@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "Advent Symbols";
+  font-style: normal;
+  font-weight: 400;
+  src: url("AdventSymbols-Sharp.woff2");
+}
+
+.adv-icon {
+  font-family: "Advent Symbols";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* Icon classes */
+
+.adv-icon.menu:after {
+  content: "\F000";
+}
+
+.adv-icon.close:after {
+  content: "\F001";
+}
+
+.adv-icon.arrow-down:after {
+  content: "\F002";
+}
+
+.adv-icon.arrow-up:after {
+  content: "\F003";
+}
+
+.adv-icon.arrow-left:after {
+  content: "\F004";
+}
+
+.adv-icon.arrow-right:after {
+  content: "\F005";
+}
+
+.adv-icon.caret-down:after {
+  content: "\F012";
+}
+
+.adv-icon.caret-up:after {
+  content: "\F013";
+}
+
+.adv-icon.caret-left:after {
+  content: "\F014";
+}
+
+.adv-icon.caret-right:after {
+  content: "\F015";
+}
+
+.adv-icon.caret-up-down:after {
+  content: "\F016";
+}
+
+.adv-icon.play:after {
+  content: "\F101";
+}
+
+.adv-icon.pause:after {
+  content: "\F102";
+}
+
+.adv-icon.back-15:after {
+  content: "\F110";
+}
+
+.adv-icon.forward-15:after {
+  content: "\F111";
+}
+
+.adv-icon.instagram:after {
+  content: "\F202";
+}
+
+.adv-icon.newsletter:after {
+  content: "\F203";
+}
+
+.adv-icon.adv-logo:after {
+  content: "\F600";
+}
+
+.adv-icon.adv-iconmark-open:after {
+  content: "\F601";
+}
+
+.adv-icon.adv-iconmark-solid:after {
+  content: "\F602";
+}
+
+.adv-icon.adv-calendar:after {
+  content: "\F603";
+}
+
+.adv-icon.snowflakes:after {
+  content: "\F604";
+}
