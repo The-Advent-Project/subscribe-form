@@ -51,8 +51,31 @@ document.querySelector('#preferred-name').addEventListener('keyup', (e) => {
 
 let existingSubscriber = false;
 
+function applyGiftRecipientCopy() {
+  document.querySelector("#intro h1").textContent =
+    "Welcome to The Advent Project!";
+  document.querySelector("#intro p").textContent =
+    "Since you have a key to this year’s calendar, you can sign up for reminders when new artwork arrives, every day from December 1st to the 24th.";
+  document.querySelector("#keyholder-fields .label").textContent =
+    "How often would you like a reminder when new art appears?";
+
+  const select = document.querySelector("#notifications");
+  select.querySelector('option[value="daily,news"]').textContent =
+    "Once per day through December 24.";
+  select.querySelector('option[value="weekly,news"]').textContent =
+    "Once per week through December 24.";
+  // Remove the "No" option (the only non-default option with value "news")
+  select.querySelector('option[value="news"]:not([selected])').remove();
+  // Require a choice: an empty placeholder value makes `required` reject it
+  select.querySelector("option[selected]").value = "";
+  select.required = true;
+}
+
 function handleURLParams() {
   const params = new URLSearchParams(window.location.search);
+  if (params.get("gift_recipient") === "true") {
+    applyGiftRecipientCopy();
+  }
   const name = params.get("name");
   const email = params.get("email");
   const notifications = params.get("notifications");
