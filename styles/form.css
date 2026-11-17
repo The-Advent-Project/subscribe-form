@@ -1,8 +1,12 @@
-@mixin input-base {
+/* FORM: Shared input styles */
+
+input[type="text"],
+input[type="email"],
+.select-menu select {
   display: block;
   width: 100%;
   max-width: 450px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: 0.3rem 0.4rem;
   border-radius: 5px;
   border-color: var(--bg-dark);
@@ -44,7 +48,6 @@ form#subscribe {
 
 input[type="text"],
 input[type="email"] {
-  @include input-base;
   margin-bottom: 0.2rem;
 }
 
@@ -111,7 +114,6 @@ input[type="submit"]:active {
   position: relative;
   max-width: 450px;
   select {
-    @include input-base;
     max-width: none;
     appearance: none;
     -webkit-appearance: none;

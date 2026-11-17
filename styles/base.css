@@ -83,6 +83,10 @@ p {
   line-height: 1.45rem;
 }
 
+p + p {
+  margin-top: 1rem;
+}
+
 a {
   color: var(--green-600);
   font-weight: 700;

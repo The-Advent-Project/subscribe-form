@@ -1,4 +1,10 @@
 [build]
-  command = "# no build command"
+  command = "npm run build"
   functions = "netlify/functions"
-  publish = "."
+  publish = "dist"
+
+[dev]
+  framework = "#custom"
+  command = "npm run dev:vite"
+  targetPort = 5173
+  port = 8888

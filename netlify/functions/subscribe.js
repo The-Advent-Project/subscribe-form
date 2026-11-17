@@ -1,8 +1,6 @@
 const axios = require("axios");
 const apiKey = process.env.SENDY_API_KEY;
 
-console.log(process.env.SENDY_API_KEY);
-
 exports.handler = async (event, context) => {
   // Get fields from front-end
   let data = JSON.parse(event.body);
