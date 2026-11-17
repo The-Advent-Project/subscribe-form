@@ -491,13 +491,31 @@ progress {
 
 /* Scaffolding */
 :root {
-  --bg-normal: #fab2b7;
-  --bg-dark: #06313d;
-  --heading-color: #226c85;
-  --text-color: #412d30;
-  --blue: #00a2bb;
-  --dark-blue: #008599;
-  --light-text-color: rgb(107, 44, 44);
+  /* UI colors */
+  --green-800: #154745;
+  --green-700: #00656c;
+  --green-600: #098a91;
+  --green-500: #15a1a6;
+  --green-400: #31b2b4;
+  --green-300: #64cdce;
+  --green-200: #9ae0e0;
+  --green-100: #cceded;
+  --green-50: #e9f6f6;
+  /* 2026 accents */
+  --olive-oil: #c6b13a;
+  --pumpkin: #f68e5b;
+  --sherbet: #fdcba6;
+  --pine: #618429;
+  --mauve: #d7b3cf;
+  --daylight: #add4e5;
+  --cherry: #ea4b2b;
+  --gold: #998234;
+  --denim: #53687d;
+  --black: #101116;
+  --night: #212633;
+  --tan: #e9e2d8;
+  --parchment: #f9f7f0;
+  --white: #ffffff;
   --row-padding: 1.3rem;
   --row-padding-medium: 3rem;
 }
@@ -514,13 +532,12 @@ html {
 
 body {
   font-family: "Mallory Compact", system-ui, sans-serif;
-  background-color: var(--bg-normal);
-  background-image: url("/images/subscribe-background.png");
-  background-size: 160px;
-  background-position: right 15px top 15px;
-  background-repeat: no-repeat;
-  color: var(--text-color);
+  background-color: var(--parchment);
+  background-image: url("/_assets/calendar/Calendar-Texture.jpg");
+  background-size: 50%;
+  color: var(--black);
   webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #wrapper {
@@ -544,12 +561,12 @@ body {
   }
 }
 h1 {
-  color: var(--heading-color);
+  font-family: "Free Lunch Rough", sans-serif;
   font-size: 2.67rem;
   line-height: 1.1;
-  letter-spacing: -0.04rem;
+  letter-spacing: -0.03rem;
   margin-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 p {
@@ -558,12 +575,12 @@ p {
 }
 
 a {
-  color: var(--heading-color);
+  color: var(--green-600);
   font-weight: 700;
   text-decoration: none;
   border-bottom-width: 1px;
   border-bottom-style: dotted;
-  border-bottom-color: var(--heading-color);
+  border-bottom-color: var(--green-400);
   background-color: rgba(255, 255, 255, 0);
   box-shadow: rgba(255, 255, 255, 0) 0 0 5px;
   transition: background-color 0.2s ease, box-shadow 0.2s ease, border-bottom-color 0.2s ease;
@@ -712,13 +729,13 @@ input[type=submit] {
   border-radius: 0.35rem;
   font-size: 1.2rem;
   font-weight: 700;
-  padding: 0.25rem 1.2rem;
-  background-color: #00a2bb;
+  padding: 0.25rem 1.2rem 0.35rem;
+  background-color: var(--green-600);
   color: white;
   border: none;
-  border-top: 2px solid #0dabc4;
-  border-bottom: 3px solid #008a9f;
-  text-shadow: #008599 1px 2px 0px;
+  outline: 1px solid var(--green-700);
+  border-top: 1px solid var(--green-400);
+  border-bottom: 1px solid var(--green-70);
   box-shadow: rgba(255, 255, 255, 0) 0 0 2px;
   transition: background-color 0.1s ease, transform 0.1s ease;
   transform: scale(1);
@@ -726,12 +743,12 @@ input[type=submit] {
 
 button.normal:hover,
 input[type=submit]:hover {
-  background-color: #0dabc4;
+  background-color: var(--green-500);
 }
 
 button.normal:active,
 input[type=submit]:active {
-  background-color: #0095ac;
+  background-color: var(--green-600);
   transform: scale(1.02);
 }
 
@@ -739,84 +756,6 @@ input[type=submit]:active {
   button.normal,
   input[type=submit] {
     min-width: 180px;
-  }
-}
-/* FORM: Preferred name */
-.field[for=preferred-name] {
-  position: relative;
-  width: 100%;
-  display: inline-flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-}
-
-.field[for=preferred-name] .curtain {
-  position: absolute;
-  top: 2px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--bg-normal);
-  transform: scaleY(1);
-  transform-origin: bottom center;
-  transition-property: transform;
-  transition-duration: 0.8s;
-  transition-timing-function: cubic-bezier(0, 0, 0, 1);
-}
-
-.field[for=preferred-name][data-active=true] .curtain {
-  transform: scaleY(0);
-}
-
-.field[for=preferred-name] .label,
-.field[for=preferred-name] input,
-.field[for=preferred-name] .input-sizer {
-  display: block;
-  font-weight: 400;
-  font-size: 0.9rem;
-  line-height: 1.5rem;
-}
-
-.field[for=preferred-name] .input-sizer {
-  visibility: hidden;
-  position: absolute;
-  left: -9999px;
-}
-
-.field[for=preferred-name] .prompt {
-  margin-right: 0.3rem;
-}
-
-.field[for=preferred-name] input {
-  border-radius: 0;
-  border-top-width: 0;
-  border-left-width: 0;
-  border-right-width: 0;
-  background-color: transparent;
-  color: var(--text-color);
-  border-color: var(--light-text-color);
-  border-bottom-width: 1px;
-  box-sizing: content-box;
-  padding: 0;
-  padding-left: 1px;
-  padding-right: 3px;
-  margin-bottom: 6px;
-  transition: width 0.3s ease;
-}
-
-.field[for=preferred-name] .footnote {
-  flex-basis: 99%;
-  flex-shrink: 0;
-}
-
-@media (min-width: 801px) {
-  .field[for=preferred-name] .footnote {
-    font-size: 0.7rem;
-  }
-  .field[for=preferred-name] .label,
-  .field[for=preferred-name] input,
-  .field[for=preferred-name] .input-sizer {
-    font-size: 0.85rem;
   }
 }
 .select-menu {

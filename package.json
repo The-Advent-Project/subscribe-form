@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The Advent Project's email subscriber form.",
   "scripts": {
-    "sass": "sass scss/_style.scss style.css"
+    "sass": "sass scss/_style.scss style.css --watch"
   },
   "author": "",
   "license": "UNLICENSED",

@@ -1,13 +1,31 @@
 /* Scaffolding */
 
 :root {
-  --bg-normal: #fab2b7;
-  --bg-dark: #06313d;
-  --heading-color: #226c85;
-  --text-color: #412d30;
-  --blue: #00a2bb;
-  --dark-blue: #008599;
-  --light-text-color: rgb(107, 44, 44);
+  /* UI colors */
+  --green-800: #154745;
+  --green-700: #00656c;
+  --green-600: #098a91;
+  --green-500: #15a1a6;
+  --green-400: #31b2b4;
+  --green-300: #64cdce;
+  --green-200: #9ae0e0;
+  --green-100: #cceded;
+  --green-50: #e9f6f6;
+  /* 2026 accents */
+  --olive-oil: #c6b13a;
+  --pumpkin: #f68e5b;
+  --sherbet: #fdcba6;
+  --pine: #618429;
+  --mauve: #d7b3cf;
+  --daylight: #add4e5;
+  --cherry: #ea4b2b;
+  --gold: #998234;
+  --denim: #53687d;
+  --black: #101116;
+  --night: #212633;
+  --tan: #e9e2d8;
+  --parchment: #f9f7f0;
+  --white: #ffffff;
   --row-padding: 1.3rem;
   --row-padding-medium: 3rem;
 }
@@ -24,12 +42,10 @@ html {
 
 body {
   font-family: "Mallory Compact", system-ui, sans-serif;
-  background-color: var(--bg-normal);
-  background-image: url("/images/subscribe-background.png");
-  background-size: 160px;
-  background-position: right 15px top 15px;
-  background-repeat: no-repeat;
-  color: var(--text-color);
+  background-color: var(--parchment);
+  background-image: url("/_assets/calendar/Calendar-Texture.jpg");
+  background-size: 50%;
+  color: var(--black);
   webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -54,12 +70,12 @@ body {
 }
 
 h1 {
-  color: var(--heading-color);
+  font-family: "Free Lunch Rough", sans-serif;
   font-size: 2.67rem;
   line-height: 1.1;
-  letter-spacing: -0.04rem;
+  letter-spacing: -0.03rem;
   margin-bottom: 1rem;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 p {
@@ -68,12 +84,12 @@ p {
 }
 
 a {
-  color: var(--heading-color);
+  color: var(--green-600);
   font-weight: 700;
   text-decoration: none;
   border-bottom-width: 1px;
   border-bottom-style: dotted;
-  border-bottom-color: var(--heading-color);
+  border-bottom-color: var(--green-400);
   background-color: rgba(255, 255, 255, 0);
   box-shadow: rgba(255, 255, 255, 0) 0 0 5px;
   transition: background-color 0.2s ease, box-shadow 0.2s ease,

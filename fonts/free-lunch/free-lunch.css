@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Free Lunch Regular";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./FreeLunch-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Free Lunch Rough";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./FreeLunch-Rough.woff2") format("woff2");
+}

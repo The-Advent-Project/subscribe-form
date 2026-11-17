@@ -1,6 +1,8 @@
 const axios = require("axios");
 const apiKey = process.env.SENDY_API_KEY;
 
+console.log(process.env.SENDY_API_KEY);
+
 exports.handler = async (event, context) => {
   // Get fields from front-end
   let data = JSON.parse(event.body);
@@ -13,10 +15,10 @@ exports.handler = async (event, context) => {
     params.append("PreferredName", data.preferredName);
   }
   if (data.notifications !== "") {
-    params.append("Keyholder2025", "yes");
+    params.append("Keyholder2026", "yes");
     params.append("Notifications", data.notifications);
   } else {
-    params.append("Keyholder2025", "");
+    params.append("Keyholder2026", "");
     params.append("Notifications", "");
   }
   params.append("list", "yxWKzjm4jwh5Q2WXB0tOHw");
